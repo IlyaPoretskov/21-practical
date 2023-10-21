@@ -19,6 +19,7 @@ int main()
 
     for (unsigned short int i = 0; i < quantity; i++)
     {
+        village[i].num = i + 1;
         village[i].output_reg();
         cout << endl << endl;
     }

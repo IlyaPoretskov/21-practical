@@ -11,7 +11,7 @@ struct region
     {
         float area = 0;
 
-        struct floor
+        struct ffloor
         {
             bool bedroom = 0;
             bool kitchen = 0;
@@ -20,7 +20,7 @@ struct region
             bool living = 0;
         };
 
-        vector <floor> floors;
+        vector <ffloor> floors;
     };
 
     home house;
@@ -46,10 +46,10 @@ struct region
             cout << "Input floors quantity: ";
             cin  >> floors_q;
         }
-
-        for (char i = 1; i < floors_q + 1; i++)
+        
+        for (char i = 0; i < floors_q; i++)
         {
-            cout << "Floor №" << (int)i << endl;
+            cout << "Floor №" << ((int)i) + 1 << endl;
             string answer;
             char sum;
 
@@ -111,9 +111,9 @@ struct region
         cout << "House:" << endl;
         cout << "Area: " << house.area << " square meters" << endl;
         
-        for (char i = 1; i < house.floors.size(); i++)
+        for (char i = 0; i < house.floors.size(); i++)
         {
-            cout << "Floor №" << (int)i << ":\n";
+            cout << "Floor №" << ((int)i) + 1 << ":\n";
 
             if (house.floors[i].bedroom)   cout <<    "Bedroom\n";
             if (house.floors[i].kitchen)   cout <<    "Kitchen\n";
